@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AccessToWebApi;
+using ClientEmployees.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,8 @@ namespace ClientEmployees
         public MainWindow()
         {
             InitializeComponent();
+            HTTPForEmployee employeeHttpClient = new HTTPForEmployee();            
+            DataContext = new EmployeeViewModel(employeeHttpClient);
         }
     }
 }
